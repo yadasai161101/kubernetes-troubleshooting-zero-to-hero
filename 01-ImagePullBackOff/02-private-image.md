@@ -17,3 +17,12 @@ kubectl create secret docker-registry  \
   --docker-password=$(aws ecr get-login-password) \
   --namespace=default
 ```
+
+### Create a Secret by providing AWS ECR credentials on the command line
+'''
+kubectl create secret docker-registry <secret-name> \
+    --namespace <namespace> \
+    --docker-server=<container-registry-name>.azurecr.io \
+    --docker-username=<service-principal-ID> \
+    --docker-password=<service-principal-password>
+'''
